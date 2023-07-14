@@ -1,13 +1,13 @@
 import React from 'react';
-import { Box, stack, Typography, Button} from '@mui/material';
+import { Box,Typography, Button} from '@mui/material';
 import HeroBannerImage from '../assets/images/banner.png';
 
 
 const HeroBanner = () => {
   return (
-    <Box sx={ {mt: {lg:'212px', xs: '70px'}, ml:{ sm: '50px'} }  } position="relative" p="20px " >
+    <Box sx={ {mt: {lg:'10px', xs: '70px'}, ml:{ sm: '50px'} }  } position="relative" p="20px " >
         <div className='flex flex-col group sm:flex-row justify-between '>
-            <div>
+            <div className='mt-0 sm:mt-40'>
                 <Typography color="#FF2625" fontWeight="600" fontSize="26px" >
                 Fitness Club 
                 </Typography>

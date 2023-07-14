@@ -4,6 +4,7 @@ import {Stack} from '@mui/material';
 
 import Logo from '../assets/images/Logo.png';
 
+
 const Navbar = () => {
   return (
     <Stack
@@ -21,6 +22,8 @@ const Navbar = () => {
       >
         <Link to="/" className='no-underline [#3A1212] border-b-[3px] border-solid border-[#FF2625] ' >Home</Link>
         <a href="#exercises" className='no-underline [#3A1212]'>Exercises</a>
+        <a href="#footer" className='no-underline [#3A1212]'>About</a>
+
       </Stack>
     </Stack>
   )

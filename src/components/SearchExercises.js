@@ -8,6 +8,13 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
   const [search,setSearch]= useState("");
   
   const [bodyParts, setBodyParts] = useState([]);
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   
   useEffect(() => {
    const fetchExercisesData = async () =>{
@@ -72,7 +79,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
     <div className='flex flex-col justify-center align p-5 mt-9'>
       <p className='font-bold text-3xl text-center mb-12 sm:text-md'>Awesome Exercises You Should Know</p>
       <div className=" flex mb-18 justify-center gap-1  " >
-        <TextField sx={{input:{fontWeight: "72px", border:'none', borderRadius:'4px'}, width:{lg: "800px", xs: "350px"}, backgroundColor:'#fff', borderRadius:'40px'}} height="76px" value={search}  onChange={(e) => setSearch(e.target.value.toLowerCase())} placeholder="Search Exercise" type="text" />
+        <TextField sx={{input:{fontWeight: "72px", border:'none', borderRadius:'4px'}, width:{lg: "800px", xs: "350px"}, backgroundColor:'#fff', borderRadius:'40px'}} height="76px" value={search}  onChange={(e) => setSearch(e.target.value.toLowerCase())} placeholder="Search Exercise" type="text" onKeyPress={handleKeyPress} />
         <Button className='search-btn hover:scale-105' sx={{bgcolor: "#FF2625",color: "#fff", width:{ lg:"175px",xs:"80px"}, fontSize:{lg:'20px', xs:'14px'}, height:'56px', position:"relative"}} 
         onClick={handleSearch}
         >
@@ -81,7 +88,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
 
       </div>
       <Box sx={{position: 'relative', width: '100%', p:'20px'}}>
-        <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}   />
+        <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} isBodyParts  />
       </Box>
     </div>
   )
